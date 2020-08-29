@@ -1,0 +1,42 @@
+<hr>
+
+<div class="mx-auto">
+  <div class="form-group pl-3 pr-3">
+    <label for="c" style="font-size: 17px; font-weight: 600;">Enter Country</label>
+    <select name="" class="form-control" id="c" #input (change)='updateValues(input.value)'>
+      <option value="{{con}}" *ngFor="let con of countries">{{con}}</option>
+    </select>
+  </div>
+</div>
+
+<app-dashboard-card [totalConformed]='totalConformed' [totalActive]='totalActive' [totalRecoverd]='totalRecoverd'
+  [totalDeathes]='totalDeathes'></app-dashboard-card>
+
+
+<div class="row ml-2 ">
+
+  <div class="col pl-3 mr-3 col-md-4 col-sm-12 ">
+    <google-chart [type]='chart.ColumnChart' [data]='dataTable' [height]="chart.height" style="width: 100%;"
+      [options]='chart.options'>
+    </google-chart>
+  </div>
+  <div class="col-md-7 col-sm-12 ">
+    <table class="table col table-light col-8  ">
+      <thead>
+        <tr>
+          <th scope="col">Sno</th>
+          <th scope="col">Date</th>
+          <th scope="col">Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let cs of selectedCountryData; index as i'>
+          <td>{{i+1}}</td>
+          <td>{{cs.date|date}}</td>
+          <td>{{cs.cases}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

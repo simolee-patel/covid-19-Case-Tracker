@@ -1,0 +1,34 @@
+<app-dashboard-card [totalConformed]='totalConformed' [totalActive]='totalActive' [totalRecoverd]='totalRecoverd'
+  [totalDeathes]='totalDeathes'></app-dashboard-card>
+
+
+<!-- <div class="row">
+  <div class="col-sm-12 col-bg-6">
+    <google-chart [type]='chart.PieChart' [data]="database" [options]='chart.options' class="ml-4">
+    </google-chart>
+  </div>
+  <div class="col-sm-12 col-bg-6">
+    <google-chart [type]='chart.ColumnChart' [data]="database" [options]='chart.options'>
+    </google-chart>
+  </div>
+</div> -->
+<div class="row ml-2">
+  <div class="col-sm-6">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title mb-0">Pie Chart</h5>
+        <google-chart [type]='chart.PieChart' [data]="database" [options]='chart.options' [height]='chart.height'>
+        </google-chart>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card mb-3">
+      <div class="card-body mb-0">
+        <h5 class="card-title mb-0">Column Chart</h5>
+        <google-chart [type]='chart.ColumnChart' [data]="database" [options]='chart.options' [height]='chart.height'>
+        </google-chart>
+      </div>
+    </div>
+  </div>
+</div>
